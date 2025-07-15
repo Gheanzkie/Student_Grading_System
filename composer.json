@@ -1,0 +1,16 @@
+{
+    "name": "delacruz/gs",
+    "description": "Basic Student Grading System",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Delacruz\\Gs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "De La Cruz G."
+        }
+    ],
+    "require": {}
+}

@@ -19,7 +19,7 @@ class DataStore
     public function getConnection(): array
     {
         $data = file_get_contents($this->filePath);
-        return jason_decode($data, true) ?? [];
+        return json_decode($data, true) ?? [];
     }
 }
 

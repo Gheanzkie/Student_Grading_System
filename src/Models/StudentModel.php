@@ -26,7 +26,8 @@ class StudentModel extends Database implements Crud {
 
     public function create() {
         //cReate data
-        $query = $this->conn->prepare("INSERT INTO `students`(`ID`, `Name`, `Course`, `year_level`, `section`) VALUES('$this->id','$this->name','$this->course','$this->year_level','$this->section')");
+        $query = $this->conn->prepare("INSERT INTO `students`(`ID`, `Name`, `Course`, `year_level`, `section`) 
+        VALUES('$this->id','$this->name','$this->course','$this->year_level','$this->section')");
         if($query->execute()){
             echo "student inserted!";
         }
@@ -45,9 +46,23 @@ class StudentModel extends Database implements Crud {
 
     }
     public function update() {
+         $sql = "UPDATE students SET Name = '$this->name', Course = '$this->course', 
+         year_level = $this->year_level, section = '$this->section' WHERE ID = $this->id";
+
+    if ($this->conn->query($sql)) {
+        echo "Student updated!";
+    } else {
+        echo "Update failed: ". $this->conn->error;
+    }
 
     }
     public function delete() {
+        $sql = "DELETE FROM `students` WHERE ID = $this->id";
+        if ($this->conn->query($sql)) {
+            echo "Student Deleted successfuly!";
+        } else {
+            echo "Delete Student failed!". $this->conn->error;
+        }
         
     }
 

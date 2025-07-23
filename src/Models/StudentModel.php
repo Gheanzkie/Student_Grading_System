@@ -45,7 +45,8 @@ class StudentModel extends Database implements Crud {
         }
 
     }
-    public function update() {
+    public function update($id) {
+        $this->id=$id;
          $sql = "UPDATE students SET Name = '$this->name', Course = '$this->course', 
          year_level = $this->year_level, section = '$this->section' WHERE ID = $this->id";
 
@@ -56,7 +57,8 @@ class StudentModel extends Database implements Crud {
     }
 
     }
-    public function delete() {
+    public function delete($id) {
+        $this->id=$id;
         $sql = "DELETE FROM `students` WHERE ID = $this->id";
         if ($this->conn->query($sql)) {
             echo "Student Deleted successfuly!";

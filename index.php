@@ -9,8 +9,9 @@ $student = new StudentModel;
 //$student->name="John doe";
 //$student->course="BSIT";
 //$student->year_level=4;
-//$student->section="C";
+//$student-sectionn;
 
-$student->delete(3);
+$student = StudentModel->read();
+print_r($student);
 
 

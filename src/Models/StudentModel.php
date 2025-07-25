@@ -47,7 +47,7 @@ class StudentModel extends Database implements Crud {
     }
     public function update($id) {
         $this->id=$id;
-         $sql = "UPDATE students SET Name = '$this->name', Course = '$this->course', 
+         $sql = "UPDATE `students` SET Name = '$this->name', Course = '$this->course', 
          year_level = $this->year_level, section = '$this->section' WHERE ID = $this->id";
 
     if ($this->conn->query($sql)) {

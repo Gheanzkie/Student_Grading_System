@@ -6,12 +6,18 @@ require 'vendor/autoload.php';
 
 $student = new StudentModel;
 
-//$student->name="John doe";
-//$student->course="BSIT";
-//$student->year_level=4;
-//$student-sectionn;
 
-$student = StudentModel->read();
-print_r($student);
+
+//$student->id=1235;
+//$student->name="Dirk";
+//$student->course="BSIT";
+//$student->year_level=1;
+//$student->section="C";
+
+
+$gwapo_ko= $student->read();
+print_r($gwapo_ko);
+
+
 
 

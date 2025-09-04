@@ -13,6 +13,8 @@ class StudentModel extends Database implements Crud {
     public string $course;
     public int $year_level;
     public string $section;
+    public string $Gender;
+    public string $Date_Created;
 
     public function __construct() 
     {
@@ -22,14 +24,16 @@ class StudentModel extends Database implements Crud {
         $this->course = "";
         $this->year_level = 0;
         $this->section = "";
+        $this->Gender = "";
+        $this->Date_Created="";
     }
 
     public function create() {
         //cReate data
-        $query = $this->conn->prepare("INSERT INTO `students`(`ID`, `Name`, `Course`, `year_level`, `section`) 
-        VALUES('$this->id','$this->name','$this->course','$this->year_level','$this->section')");
+        $query = $this->conn->prepare("INSERT INTO `students`(`ID`, `Name`, `Course`, `year_level`, `section`, `Gender`, `Date_Created`) 
+        VALUES('$this->id','$this->name','$this->course','$this->year_level','$this->section', '$this->Gender', '$this->Date_Created')");
         if($query->execute()){
-            echo "student inserted!";
+            echo "student Created!";
         }
 
     }
@@ -48,7 +52,7 @@ class StudentModel extends Database implements Crud {
     public function update($id) {
         $this->id=$id;
          $sql = "UPDATE `students` SET Name = '$this->name', Course = '$this->course', 
-         year_level = $this->year_level, section = '$this->section' WHERE ID = $this->id";
+         year_level = $this->year_level, section = '$this->section', Gender = '$this->Gender', Date_Created = '$this->Date_Created' WHERE ID = $this->id";
 
     if ($this->conn->query($sql)) {
         echo "Student updated!";

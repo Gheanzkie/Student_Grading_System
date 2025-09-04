@@ -8,15 +8,15 @@ $student = new StudentModel;
 
 
 
-//$student->id=1235;
-//$student->name="Dirk";
-//$student->course="BSIT";
-//$student->year_level=1;
-//$student->section="C";
+$student->name="Bibong";
+$student->course="BSIT";
+$student->year_level=2;
+$student->section="C";
+$student->Gender= "Male";
+$student->Date_Created= "September 4 2025";
 
+$student->update(1,2,6,7);
 
-$gwapo_ko= $student->read();
-print_r($gwapo_ko);
 
 
 

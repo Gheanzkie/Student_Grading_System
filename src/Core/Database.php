@@ -8,7 +8,7 @@ class Database{
     public function __construct()
     {
         $host = 'localhost';
-        $db = 'oop';
+        $db = 'ghean_database';
         $user = 'root';
         $pass = '';
 
